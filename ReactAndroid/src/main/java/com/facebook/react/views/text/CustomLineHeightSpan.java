@@ -44,6 +44,8 @@ public class CustomLineHeightSpan implements LineHeightSpan, ReactSpan {
     } else if (-fm.top + fm.bottom > mHeight) {
       // Show all ascent, descent, bottom, as much top as possible
       fm.top = fm.bottom - mHeight;
+      fm.ascent = fm.top;
+      fm.descent = fm.bottom;
     } else {
       // Show proportionally additional ascent / top & descent / bottom
       final int additional = mHeight - (-fm.top + fm.bottom);
